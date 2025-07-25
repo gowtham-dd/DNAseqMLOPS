@@ -1,7 +1,7 @@
 
 from src.DNASeqMLOPS.constant import *
 from src.DNASeqMLOPS.utils.common import read_yaml,create_directories 
-from src.DNASeqMLOPS.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig
+from src.DNASeqMLOPS.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig,ModelEvaluationConfig
 class ConfigurationManager:
     def __init__(
         self,
@@ -72,4 +72,18 @@ class ConfigurationManager:
             transformed_data_dir=Path(config.transformed_data_dir),
             model_dir=Path(config.model_dir),
             models_params=models_params
+        )
+    
+        
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        
+        return ModelEvaluationConfig(
+            root_dir=Path(config.root_dir),
+            test_data_path=Path(config.test_data_path),
+            test_labels_path=Path(config.test_labels_path),
+            model_dir=Path(config.model_dir),
+            metric_file_name=Path(config.metric_file_name),
+            mlflow_uri=config.mlflow_uri,
+            all_params=self.params.model_training  # All model params from params.yaml
         )

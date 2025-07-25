@@ -33,3 +33,15 @@ class ModelTrainerConfig:
     transformed_data_dir: Path
     model_dir: Path
     models_params: dict  # Will contain params from params.yaml
+
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    test_labels_path: Path
+    model_dir: Path
+    metric_file_name: Path
+    mlflow_uri: str
+    all_params: dict

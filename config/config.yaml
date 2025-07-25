@@ -32,4 +32,4 @@ model_evaluation:
   test_labels_path: artifacts/data_transformation/y.npy
   model_dir: artifacts/model_trainer/models
   metric_file_name: artifacts/model_evaluation/metrics.json
-  mlflow_uri: "http://127.0.0.1:5000"  # Your MLflow tracking URI
+  mlflow_uri: "https://dagshub.com/gowtham-dd/DNAseqMLOPS.mlflow"  # Your MLflow tracking URI
