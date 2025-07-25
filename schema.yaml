@@ -1,0 +1,8 @@
+COLUMNS:
+  DNA:
+    type: string
+    required: true
+  Y:
+    type: int
+    allowed: [0, 1]
+    required: true

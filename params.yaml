@@ -1,0 +1,17 @@
+model_training:
+  models:
+    RandomForest:
+      n_estimators: 200
+      max_depth: 10
+      random_state: 42
+    SVM:
+      kernel: "rbf"
+      C: 1.0
+      gamma: "scale"
+      random_state: 42
+      probability: true
+    XGBoost:
+      n_estimators: 200
+      max_depth: 6
+      learning_rate: 0.1
+      random_state: 42
